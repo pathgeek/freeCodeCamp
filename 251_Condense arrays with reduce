@@ -20,3 +20,7 @@ Use the <reduce> method to sum all the values in array and assign it to singleVa
       // Only change code below this line.
       
     
+array.reduce(function(a,b){
+  singleVal = a+b;
+   return singleVal;
+      });
