@@ -6,7 +6,22 @@ Factorials are often represented with the shorthand notation n!
 
 ---------------
 function factorialize(num) {
-  return num;
+  // create empty array
+var myArr = []; 
+  // set total to 1 (for multiplier, must be non-zero)
+var total = 1;
+  // push integers from num to array
+for (var i = num; i>0 ; i -=1){
+  myArr.push(i);
+}
+  // perform factorializing iterations
+    for (var x = 0; i < myArr.length; i++){
+        total = total * myArr[i];
+}
+  //return factorialization total
+  return total;
 }
 
+
 factorialize(5);
+
