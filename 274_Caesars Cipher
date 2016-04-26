@@ -6,10 +6,23 @@ by 13 places. Thus 'A' ↔ 'N', 'B' ↔  'O' and so on.
     All letters will be uppercase. Do not transform any non-alphabetic character 
 (i.e. spaces, punctuation), but do pass them on.
 
-function rot13(str) { // LBH QVQ VG!
-  
-  return str;
-}
+function rot13(str) {
+// assuming, as stated, that everything is always all caps
+  var newString = [];
 
-// Change the inputs below to test
-rot13("SERR PBQR PNZC");
+  for (var i = 0; i < str.length; i++) {
+                //determine if the item is a letter
+    if (str.charCodeAt(i) < 65 || str.charCodeAt(i) > 90) {
+                //keep it as is it
+      newString.push(str.charAt(i));
+                // if it's a letter N or higher, subtract 13
+    } else if (str.charCodeAt(i) > 77) {
+      newString.push(String.fromCharCode(str.charCodeAt(i) - 13));
+    } else {
+                    //if A-M; add 13
+      newString.push(String.fromCharCode(str.charCodeAt(i) + 13));
+    }
+  }
+  return newString.join("");
+}
+rot13("SERR CVMMN!");
