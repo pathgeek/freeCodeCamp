@@ -17,3 +17,12 @@ As you write code, you should regularly add comments to clarify the function of 
 Instructions
 Try creating one of each type of comment.
 
+---------------------------------------------------------------------
+Create a // style comment that contains at least five letters.
+      //asdfg
+Create a /* */ style comment that contains at least five letters.
+Make sure that you close the comment with a */.
+      /* asdfg */
+
+
+
