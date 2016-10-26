@@ -1,0 +1,37 @@
+Return true if the given string is a palindrome. Otherwise, return false.
+A palindrome is a word or sentence that's spelled the same way both forward and backward, 
+ignoring punctuation, case, and spacing.
+
+Note
+You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) 
+and turn everything lower case in order to check for palindromes.
+
+We'll pass strings with varying formats, such as "racecar", "RaceCar", and "race CAR" among others.
+-------------------------------------------
+function palindrome(str) {
+  var outString;
+  var noSpaces;
+  var noCaps;
+  var back;
+  // remove special characters from string
+  outString = str.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+  // remove spaces from string
+  noSpaces = outString.replace(/\s/gi, '');
+  // remove caps
+  noCaps = noSpaces.toLowerCase();
+  // create reverse string
+  back = noCaps.split('').reverse().join('');
+  
+  // if forwards == backwards, true
+  if (noCaps === back){
+  return true ;
+    // if not, false
+} else{
+  return false;
+}
+}
+
+
+
+palindrome("A man, a plan, a canal. Panama");
+-------------------------------------------

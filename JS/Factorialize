@@ -1,0 +1,27 @@
+Return the factorial of the provided integer.
+If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+Factorials are often represented with the shorthand notation n!
+
+        For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
+
+---------------
+function factorialize(num) {
+  // create empty array
+var myArr = []; 
+  // set total to 1 (for multiplier, must be non-zero)
+var total = 1;
+  // push integers from num to array
+for (var i = num; i>0 ; i -=1){
+  myArr.push(i);
+}
+  // perform factorializing iterations
+    for (var x = 0; i < myArr.length; i++){
+        total = total * myArr[i];
+}
+  //return factorialization total
+  return total;
+}
+
+
+factorialize(5);
+

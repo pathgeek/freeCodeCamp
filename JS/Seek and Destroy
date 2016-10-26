@@ -1,0 +1,39 @@
+You will be provided with an initial array (the first argument in the destroyer function), 
+followed by one or more arguments. Remove all elements from the initial array that are 
+of the same value as these arguments.
+
+function destroyer(arr) {
+       // create an empty waste bin array
+  var elemToDestroy = [];
+         // iterate through arr to define what will go
+  for(var i = 1; i < arguments.length; i++){
+    elemToDestroy.push(arguments[i]);
+  }
+       //survived = get the value of the argument at index 0 of the destroyer function, after it has been filtered
+       
+  var survived = arguments[0].filter(function(element, index){
+  
+      //The filter method has its own anonymous function 
+      //inside of which there's a for loop that loops as many times as there 
+      //are elements in the elemToDestroy array. with each loops it checks 
+      //if the currently looped element of elemToDestroy is equal to the currently 
+      //looped element of arguments[0] (which is called elements because of the 
+      //filter method). If they are indeed equal, the loop will set toReturn to 
+      //false and the value will not be approved by the filter method. However, 
+      //if the two elements are not of equal value, the loop will not do anything, 
+      //which means the value of toReturn will continue being true, as defined earlier
+      
+    var toReturn = true;
+
+    for(var i = 0; i < elemToDestroy.length; i++){
+      if (element === elemToDestroy[i]){ 
+        toReturn = false;
+      }
+    }
+    return toReturn;
+
+  });
+  return survived;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);  
